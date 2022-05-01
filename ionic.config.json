@@ -1,0 +1,8 @@
+{
+  "name": "Test-community-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "a9e0ae3d"
+}
