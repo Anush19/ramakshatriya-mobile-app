@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+  apiKey: 'AIzaSyCqfYSAeTjwAhT7LpOayiovMIyCnZ4qwBo',
+  authDomain: 'ramakshatriya-mobile-app.firebaseapp.com',
+  projectId: 'ramakshatriya-mobile-app',
+  storageBucket: 'ramakshatriya-mobile-app.appspot.com',
+  messagingSenderId: '725998603976',
+  appId: '1:725998603976:web:7cb45f296aa72f3c27dffd',
+  measurementId: 'G-ERGP893Z25'
+  }
 };
 
 /*

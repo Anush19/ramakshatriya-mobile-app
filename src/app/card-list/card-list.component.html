@@ -1,27 +1,9 @@
 <!-- List of Text Items -->
 <ion-list>
-  <ion-item>
+  <ion-item *ngFor="let news of newsList">
     <ion-thumbnail slot="start">
-    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    <img src="{{news.tumbnail}}">
   </ion-thumbnail>
-  <ion-label>Item Thumbnail</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-thumbnail slot="start">
-    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-  </ion-thumbnail>
-  <ion-label>Item Thumbnail</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-thumbnail slot="start">
-    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-  </ion-thumbnail>
-  <ion-label>Item Thumbnail</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-thumbnail slot="start">
-    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-  </ion-thumbnail>
-  <ion-label>Item Thumbnail</ion-label>
+  <ion-label>{{ news.title }}</ion-label>
   </ion-item>
 </ion-list>
