@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../services/news.service';
 
 @Component({
   selector: 'app-slide',
@@ -13,8 +14,22 @@ export class SlideComponent implements OnInit {
     autoplay: true,
   };
 
-  constructor() { }
+  public newsList: any = [];
 
-  ngOnInit() {}
+  constructor(
+    private newsService: NewsService
+  ) { }
+
+  ngOnInit() {
+    this.getNews();
+  }
+
+  public getNews() {
+    this.newsService.getNews().subscribe( (newsList) => {
+      console.log(newsList);
+      this.newsList = newsList;
+    }
+    );
+  }
 
 }

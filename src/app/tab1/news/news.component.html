@@ -1,3 +1,12 @@
 
-  <app-card-list [newsList]= newsList ></app-card-list>
+ <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Top New
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content [fullscreen]="true" class="ion-padding-top">
+ <app-card-list [newsList]= newsList ></app-card-list>
+</ion-content>
