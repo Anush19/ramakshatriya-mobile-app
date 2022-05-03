@@ -10,6 +10,7 @@ import { NewsComponent } from './news/news.component';
 import { HomeComponent } from './home/home.component';
 import { SlideComponent } from '../slide/slide.component';
 import { ArticleComponent } from './news/article/article.component';
+import { DemiseComponent } from './demise/demise.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { ArticleComponent } from './news/article/article.component';
     CardListComponent,
     HomeComponent,
     SlideComponent,
-    ArticleComponent
+    ArticleComponent,
+    DemiseComponent
   ]
 })
 export class Tab1PageModule {}
