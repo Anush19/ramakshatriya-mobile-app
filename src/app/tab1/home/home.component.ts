@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,25 +9,24 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  news(){
+  news() {
     this.router.navigate(['/tabs/tab1/news']);
   }
 
-  demise(){
+  demise() {
     this.router.navigate(['/tabs/tab1/demise']);
   }
 
-  communities(){
+  communities() {
     this.router.navigate(['/tabs/tab1/communities']);
   }
 
-  knowYourCommunity(){
+  knowYourCommunity() {
     this.router.navigate(['/tabs/tab1/knowYourCommunity']);
   }
 

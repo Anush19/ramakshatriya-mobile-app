@@ -17,10 +17,11 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   }
+  
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class Tab1PageRoutingModule {}
+export class DashboardRoutingModule {}
