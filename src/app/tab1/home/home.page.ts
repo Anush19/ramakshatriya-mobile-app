@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() { }
 
   news() {
-    this.router.navigate(['/news']);
+    this.router.navigate(['/tabs/tab1/news']);
   }
 
   demise() {

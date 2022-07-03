@@ -26,12 +26,13 @@ export class LoginPage implements OnInit {
     }
   }
   async login() {
+    //this.router.navigate(['/tabs/home'])
     //validate creds TODO
     const user = await this.ngFireAuth.signInWithEmailAndPassword(this.user.email, this.user.password);
     console.log('The user is ', user);
     
     if(user.user.email){
-      this.router.navigate(['/home'])
+      this.router.navigate(['/tabs/home'])
     }else{
       alert('login unsuccessful');
     }
