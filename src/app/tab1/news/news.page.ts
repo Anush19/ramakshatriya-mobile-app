@@ -3,8 +3,8 @@ import { NewsService } from 'src/app/services/news.service';
 
 @Component({
   selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss'],
+  templateUrl: './news.page.html',
+  styleUrls: ['./news.page.scss'],
 })
 export class NewsComponent implements OnInit {
 

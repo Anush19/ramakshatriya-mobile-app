@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
 export class HomeComponent implements OnInit {
 
@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() { }
 
   news() {
-    this.router.navigate(['/tabs/tab1/news']);
+    this.router.navigate(['/news']);
   }
 
   demise() {

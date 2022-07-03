@@ -5,11 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { DashboardPage } from './dashboard.page';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { CardListComponent } from '../card-list/card-list.component';
-import { NewsComponent } from './news/news.component';
+import { CardListComponent } from '../card-list/card-list.page';
+import { NewsComponent } from './news/news.page';
 import { SlideComponent } from '../slide/slide.component';
 import { ArticleComponent } from './news/article/article.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/home.page';
 
 @NgModule({
   imports: [
