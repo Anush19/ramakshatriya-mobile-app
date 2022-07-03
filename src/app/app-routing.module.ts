@@ -15,15 +15,15 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./tab1/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./hometab/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'news',
-    loadChildren: () => import('./tab1/news/news.module').then( m => m.NewsPageModule)
+    loadChildren: () => import('./hometab/news/news.module').then( m => m.NewsPageModule)
   },
   {
-    path: 'tabs/tab1/news',
-    loadChildren: () => import('./tab1/news/news.module').then( m => m.NewsPageModule)
+    path: 'tabs/hometab/news',
+    loadChildren: () => import('./hometab/news/news.module').then( m => m.NewsPageModule)
   },
  
 ];

@@ -19,7 +19,7 @@ export class CardListComponent implements OnInit {
 
   public navigate(newsId: string) {
     debugger;
-    this.router.navigate(['/tabs/tab1/news/' + newsId]);
+    this.router.navigate(['/tabs/hometab/news/' + newsId]);
   }
 
 }

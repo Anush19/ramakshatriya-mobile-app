@@ -15,19 +15,19 @@ export class HomeComponent implements OnInit {
   ngOnInit() { }
 
   news() {
-    this.router.navigate(['/tabs/tab1/news']);
+    this.router.navigate(['/tabs/hometab/news']);
   }
 
   demise() {
-    this.router.navigate(['/tabs/tab1/demise']);
+    this.router.navigate(['/tabs/hometab/demise']);
   }
 
   communities() {
-    this.router.navigate(['/tabs/tab1/communities']);
+    this.router.navigate(['/tabs/hometab/communities']);
   }
 
   knowYourCommunity() {
-    this.router.navigate(['/tabs/tab1/knowYourCommunity']);
+    this.router.navigate(['/tabs/hometab/knowYourCommunity']);
   }
 
 
