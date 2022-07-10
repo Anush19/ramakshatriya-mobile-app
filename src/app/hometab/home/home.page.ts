@@ -29,7 +29,9 @@ export class HomeComponent implements OnInit {
   knowYourCommunity() {
     this.router.navigate(['/tabs/hometab/knowYourCommunity']);
   }
-
+  upload(){
+    this.router.navigate(['/tabs/hometab/communities']);
+  }
 
 
 }

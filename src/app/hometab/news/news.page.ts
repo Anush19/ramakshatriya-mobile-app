@@ -20,7 +20,7 @@ export class NewsComponent implements OnInit {
 
   public getNews() {
     this.newsService.getNews().subscribe( (newsList) => {
-      console.log(newsList);
+      console.log('news list is :: ',newsList);
       this.newsList = newsList;
     }
     );

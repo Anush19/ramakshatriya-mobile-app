@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss'],
+  selector: 'app-newsTemplate',
+  templateUrl: './newsTemplate.component.html',
+  styleUrls: ['./newsTemplate.component.scss'],
 })
-export class NewsComponent implements OnInit {
+export class NewsTemplateComponent implements OnInit {
   @Input() cardTitle: string = '';
   @Input() cardSubTitle: string = '';
   @Input() contentText: string = '';
