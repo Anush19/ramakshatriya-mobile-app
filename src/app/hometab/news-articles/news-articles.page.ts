@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { NewsService } from '../services/news.service';
+import { NewsService } from '../../services/news.service';
 
 @Component({
   selector: 'app-news-articles',

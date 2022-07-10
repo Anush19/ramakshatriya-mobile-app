@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { FirebaseAuthService } from '../services/firebase-auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginPage implements OnInit {
     email: '',
     password: ''
   }
-  constructor(private readonly router: Router, public ngFireAuth: AngularFireAuth) { }
+  constructor(private readonly router: Router, public ngFireAuth: AngularFireAuth,public firebaseAuthService: FirebaseAuthService) { }
 
   ngOnInit() {
   }
@@ -24,6 +25,9 @@ export class LoginPage implements OnInit {
     }else{
       alert('registration unsuccessful');
     }
+  }
+  async gmailLogin(){
+    const user = await this.firebaseAuthService.googleLogin();
   }
   async login() {
     //this.router.navigate(['/tabs/home'])

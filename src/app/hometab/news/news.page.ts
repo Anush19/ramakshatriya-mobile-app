@@ -31,56 +31,56 @@ export class NewsComponent implements OnInit {
   }
 
   /**This block is just to demo check the add operations .. to be reordered later */
-  async addNews() {
-    // this.router.navigate(['/news-articles']);
-    const alert = await this.alertCntrl.create(
-      {
-        header: 'Add news',
-        inputs: [{
-          name: 'title',
-          placeholder: 'title',
-          type: 'text'
-        }, {
-          name: 'subtitle',
-          placeholder: 'subtitle',
-          type: 'text'
-        }, {
-          name: 'info',
-          placeholder: 'info',
-          type: 'textarea'
-        }, {
-          name: 'thumbnail',
-          placeholder: 'thumbnail',
-          type: 'text'
-        }, {
-          name: 'altText',
-          placeholder: 'altText',
-          type: 'text'
-        }],
-        buttons: [
-          {
-            text: 'Cancel',
-            role: 'cancel'
-          },
-          {
-            text: 'Add',
-            handler: (res) => {
-              this.newsService.addNews({
-                title: res.title,
+  addNews() {
+     this.router.navigate(['/tabs/hometab/news-articles']);
+    // const alert = await this.alertCntrl.create(
+    //   {
+    //     header: 'Add news',
+    //     inputs: [{
+    //       name: 'title',
+    //       placeholder: 'title',
+    //       type: 'text'
+    //     }, {
+    //       name: 'subtitle',
+    //       placeholder: 'subtitle',
+    //       type: 'text'
+    //     }, {
+    //       name: 'info',
+    //       placeholder: 'info',
+    //       type: 'textarea'
+    //     }, {
+    //       name: 'thumbnail',
+    //       placeholder: 'thumbnail',
+    //       type: 'text'
+    //     }, {
+    //       name: 'altText',
+    //       placeholder: 'altText',
+    //       type: 'text'
+    //     }],
+    //     buttons: [
+    //       {
+    //         text: 'Cancel',
+    //         role: 'cancel'
+    //       },
+    //       {
+    //         text: 'Add',
+    //         handler: (res) => {
+    //           this.newsService.addNews({
+    //             title: res.title,
 
-                subtitle: res.subtitle,
-                altText: res.altText,
-                info: res.info,
-                thumbnail: res.thumbnail
-              })
-            }
-          }
-        ]
-      }
+    //             subtitle: res.subtitle,
+    //             altText: res.altText,
+    //             info: res.info,
+    //             thumbnail: res.thumbnail
+    //           })
+    //         }
+    //       }
+    //     ]
+    //   }
 
 
-    );
-    await alert.present();
+    // );
+    // await alert.present();
   }
   onChange(change) {
     console.log(change)
