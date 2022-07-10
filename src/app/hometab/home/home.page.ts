@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FirebaseAuthService } from 'src/app/services/firebase-auth.service';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomeComponent implements OnInit {
+  loggedInUser: any;
 
   constructor(
     private router: Router,
+    private fireAuthService: FirebaseAuthService
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.loggedInUser = this.fireAuthService.getUser();
+  }
 
   news() {
     this.router.navigate(['/tabs/hometab/news']);
@@ -29,8 +34,11 @@ export class HomeComponent implements OnInit {
   knowYourCommunity() {
     this.router.navigate(['/tabs/hometab/knowYourCommunity']);
   }
-  upload(){
+  upload() {
     this.router.navigate(['/tabs/hometab/news']);
+  }
+  logoutAction() {
+    this.fireAuthService.logout();
   }
 
 

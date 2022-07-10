@@ -2,8 +2,11 @@
   <ion-toolbar>
     <ion-title>
       <img src="../../../assets/images/logo.png" alt="logo" height="40px">
-      Ramakshatriya
+      Ramakshatriya Welcome {{loggedInUser.displayName}}
     </ion-title>
+    <ion-button color="primary" slot="end" (click)="logoutAction()">LogOut
+
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
