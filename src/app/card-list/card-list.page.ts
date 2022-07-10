@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,15 +9,29 @@ import { Router } from '@angular/router';
 export class CardListComponent implements OnInit {
 
   @Input() newsList: any;
-
+  @Output() onClick = new EventEmitter<{}>();
   constructor(
     private router: Router
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   public navigate(newsId: string) {
     this.router.navigate(['/tabs/hometab/news/' + newsId]);
+  }
+  public editInfo(newsInfo: any) {
+    const data = {
+      news: newsInfo,
+      event: 'edit',
+    };
+    this.onClick.emit(data);
+  }
+  public deleteInfo(newsInfo: any) {
+    const data = {
+      news: newsInfo,
+      event: 'delete',
+    };
+    this.onClick.emit(data);
   }
 
 }

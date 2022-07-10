@@ -8,5 +8,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding-top">
- <app-card-list [newsList]= newsList ></app-card-list>
+ <app-card-list (onClick)="onChange($event)" [newsList]= newsList ></app-card-list>
+
+ 
+<!-- This is just for testing the addition of new data.. To be reformatted -->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+  <ion-fab-button (click)="addNews()"></ion-fab-button>
+  <ion-icon name="add"></ion-icon>
+</ion-fab>
 </ion-content>

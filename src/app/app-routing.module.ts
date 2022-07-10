@@ -25,7 +25,10 @@ const routes: Routes = [
     path: 'tabs/hometab/news',
     loadChildren: () => import('./hometab/news/news.module').then( m => m.NewsPageModule)
   },
- 
+  {
+    path: 'news-articles',
+    loadChildren: () => import('./news-articles/news-articles.module').then( m => m.NewsArticlesPageModule)
+  }
 ];
 @NgModule({
   imports: [

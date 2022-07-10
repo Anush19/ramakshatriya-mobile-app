@@ -5,5 +5,11 @@
     <img src="{{news.tumbnail}}">
   </ion-thumbnail>
   <ion-label>{{ news.title }}</ion-label>
+  <ion-button slot="end" fill="clear" (click)="editInfo(news)">
+    <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
+  </ion-button>
+  <ion-button slot="end" fill="clear" (click)="deleteInfo(news)">
+    <ion-icon slot="icon-only" name="trash"></ion-icon>
+  </ion-button>
   </ion-item>
 </ion-list>

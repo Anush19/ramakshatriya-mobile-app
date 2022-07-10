@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/tabs/hometab/knowYourCommunity']);
   }
   upload(){
-    this.router.navigate(['/tabs/hometab/communities']);
+    this.router.navigate(['/tabs/hometab/news']);
   }
 
 
