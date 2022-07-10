@@ -2,7 +2,7 @@
 <ion-list>
   <ion-item *ngFor="let news of newsList" (click) = "navigate(news.article_id)" >
     <ion-thumbnail slot="start">
-    <img src="{{news.tumbnail}}">
+    <img src="{{news.thumbnail}}">
   </ion-thumbnail>
   <ion-label>{{ news.title }}</ion-label>
   <ion-button slot="end" fill="clear" (click)="editInfo(news)">

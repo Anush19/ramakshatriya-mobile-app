@@ -2,5 +2,7 @@
 	"appId": "io.ionic.starter",
 	"appName": "Test-community-app",
 	"webDir": "www",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+	"npmClient": "npm"
+
 }
