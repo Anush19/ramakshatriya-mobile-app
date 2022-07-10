@@ -18,7 +18,6 @@ export class CardListComponent implements OnInit {
   ngOnInit() {}
 
   public navigate(newsId: string) {
-    debugger;
     this.router.navigate(['/tabs/hometab/news/' + newsId]);
   }
 
