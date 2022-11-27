@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { NewsInfo } from 'src/app/model/news';
 import { NewsService } from 'src/app/services/news.service';
 
 @Component({
@@ -11,86 +11,48 @@ import { NewsService } from 'src/app/services/news.service';
 export class NewsComponent implements OnInit {
 
   public newsList: any = [];
+  url: any;
 
   constructor(
     private newsService: NewsService,
-    private alertCntrl: AlertController,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {
     this.getNews();
   }
 
-  public getNews() {
-    this.newsService.getNews().subscribe((newsList) => {
-      console.log('news list is :: ', newsList);
-      this.newsList = newsList;
+  public  getNews() {
+    let tempNewsList = [];
+    if(this.newsService.imageDetailsList){
+       this.newsService.imageDetailsList.snapshotChanges().subscribe((newsArticles) => {
+         newsArticles.forEach(item => {
+          let a = item.payload.toJSON();
+          a['$key'] = item.key;
+          tempNewsList.push(a as NewsInfo);
+        });
+        this.newsList = new Set(tempNewsList);
+        console.log(this.newsList);
+      })
     }
-    );
   }
 
-  /**This block is just to demo check the add operations .. to be reordered later */
   addNews() {
-     this.router.navigate(['/tabs/hometab/news-articles']);
-    // const alert = await this.alertCntrl.create(
-    //   {
-    //     header: 'Add news',
-    //     inputs: [{
-    //       name: 'title',
-    //       placeholder: 'title',
-    //       type: 'text'
-    //     }, {
-    //       name: 'subtitle',
-    //       placeholder: 'subtitle',
-    //       type: 'text'
-    //     }, {
-    //       name: 'info',
-    //       placeholder: 'info',
-    //       type: 'textarea'
-    //     }, {
-    //       name: 'thumbnail',
-    //       placeholder: 'thumbnail',
-    //       type: 'text'
-    //     }, {
-    //       name: 'altText',
-    //       placeholder: 'altText',
-    //       type: 'text'
-    //     }],
-    //     buttons: [
-    //       {
-    //         text: 'Cancel',
-    //         role: 'cancel'
-    //       },
-    //       {
-    //         text: 'Add',
-    //         handler: (res) => {
-    //           this.newsService.addNews({
-    //             title: res.title,
-
-    //             subtitle: res.subtitle,
-    //             altText: res.altText,
-    //             info: res.info,
-    //             thumbnail: res.thumbnail
-    //           })
-    //         }
-    //       }
-    //     ]
-    //   }
-
-
-    // );
-    // await alert.present();
+    this.router.navigateByUrl('/tabs/hometab/upload-form');
   }
   onChange(change) {
-    console.log(change)
     if (change.event === 'delete') {
-
-      this.newsService.deleteNews(change.news)
+      let list=[];
+      list = [...this.newsList];
+      this.newsService.deleteImageDetailsList(change.news.$key);
+      this.newsList = list.filter((news) => news.$key !== change.news.$key);
+      this.getNews();
     }
     if (change.event === 'edit') {
 
       this.newsService.updateNews(change.news)
     }
   }
+
+
 }

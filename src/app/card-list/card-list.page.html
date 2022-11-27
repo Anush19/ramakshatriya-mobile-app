@@ -1,12 +1,12 @@
 <!-- List of Text Items -->
 <ion-list>
-  <ion-item *ngFor="let news of newsList" (click) = "navigate(news.article_id)" >
+  <ion-item *ngFor="let news of newsList"  >
     <ion-thumbnail slot="start">
-    <img src="{{news.thumbnail}}">
+    <img alt="{{news.image}}" src="{{news.image}}">
   </ion-thumbnail>
   <ion-label>{{ news.title }}</ion-label>
   <ion-button slot="end" fill="clear" (click)="editInfo(news)">
-    <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
+    <ion-icon slot="icon-only" name="create-sharp"></ion-icon>
   </ion-button>
   <ion-button slot="end" fill="clear" (click)="deleteInfo(news)">
     <ion-icon slot="icon-only" name="trash"></ion-icon>

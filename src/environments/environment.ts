@@ -7,6 +7,7 @@ export const environment = {
   firebase: {
   apiKey: 'AIzaSyCqfYSAeTjwAhT7LpOayiovMIyCnZ4qwBo',
   authDomain: 'ramakshatriya-mobile-app.firebaseapp.com',
+  databaseURL: "https://ramakshatriya-mobile-app-default-rtdb.firebaseio.com",
   projectId: 'ramakshatriya-mobile-app',
   storageBucket: 'ramakshatriya-mobile-app.appspot.com',
   messagingSenderId: '725998603976',

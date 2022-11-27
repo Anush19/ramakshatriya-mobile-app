@@ -26,9 +26,10 @@ const routes: Routes = [
     loadChildren: () => import('./hometab/news/news.module').then( m => m.NewsPageModule)
   },
   {
-    path: 'news-articles',
-    loadChildren: () => import('./hometab/news-articles/news-articles.module').then( m => m.NewsArticlesPageModule)
+    path: 'tabs/hometab/upload-form',
+    loadChildren: () => import('./hometab/upload-form/upload-form.module').then( m => m.UploadFormPageModule)
   }
+
 ];
 @NgModule({
   imports: [

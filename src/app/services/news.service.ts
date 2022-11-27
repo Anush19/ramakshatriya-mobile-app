@@ -3,7 +3,11 @@ import { collectionData, docData, Firestore, updateDoc } from '@angular/fire/fir
 import { addDoc, collection, deleteDoc, doc } from '@firebase/firestore';
 import { Observable } from 'rxjs';
 import { News } from '../interface/newsInterface';
-
+import {
+  AngularFireDatabase,
+  AngularFireList,
+  AngularFireObject,
+} from '@angular/fire/compat/database';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,9 +17,12 @@ export class NewsService {
     subtitle: '',
     altText: '',
     info: '',
-    thumbnail: ''
+    thumbnail: '',
+    reference: ''
   };
-  constructor(private firestore: Firestore) { }
+  imageDetailsList: AngularFireList<any>;
+  imageRef: AngularFireObject<unknown>;
+  constructor(private firestore: Firestore, private firebase: AngularFireDatabase) { }
   getNews(): Observable<News[]> {
     const newsRef = collection(this.firestore, 'news');
     return collectionData(newsRef, { idField: 'id' }) as Observable<News[]>;
@@ -45,5 +52,19 @@ export class NewsService {
       info: news.info,
       thumbnail: news.thumbnail
     });
+  }
+
+  addImageDetails(imageDetails) {
+    this.imageDetailsList.push(imageDetails);
+  }
+
+  getImageDetailsList() {
+    this.imageDetailsList = this.firebase.list('imageDetails');
+
+  }
+
+  deleteImageDetailsList(id: string) {
+    this.imageRef = this.firebase.object('imageDetails/' + id);
+    this.imageRef.remove();
   }
 }

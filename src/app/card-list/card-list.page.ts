@@ -6,19 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './card-list.page.html',
   styleUrls: ['./card-list.page.scss'],
 })
-export class CardListComponent implements OnInit {
+export class CardListComponent {
 
   @Input() newsList: any;
   @Output() onClick = new EventEmitter<{}>();
-  constructor(
-    private router: Router
-  ) { }
 
-  ngOnInit() { }
-
-  public navigate(newsId: string) {
-    this.router.navigate(['/tabs/hometab/news/' + newsId]);
-  }
   public editInfo(newsInfo: any) {
     const data = {
       news: newsInfo,

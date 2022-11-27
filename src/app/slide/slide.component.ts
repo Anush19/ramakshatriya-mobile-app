@@ -21,6 +21,7 @@ export class SlideComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.newsService.getImageDetailsList();
     this.getNews();
   }
 

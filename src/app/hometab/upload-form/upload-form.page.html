@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ message }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-button id="open-modal" expand="block">Upload</ion-button>
+  <ion-button id="close-modal"  expand="block" (click)="navigateBack()">Cancel</ion-button>
+  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Add News</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-list lines="full">
+          <form [formGroup]="newsGroup" (ngSubmit)="logForm()">
+            <ion-item>
+              <ion-input type="text" formControlName="headline" placeholder="Headline"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" formControlName="subtitle" placeholder="Subtitle"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-textarea formControlName="description" placeholder="Description"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-input type="file" accept=".jpg,.png" formControlName="image" placeholder="Choose file" (change)="showPreview($event)"></ion-input>
+            </ion-item>
+            <ion-button type="submit" color="primary"  size="small" expand="block" [disabled]="!newsGroup.valid" (click)="confirm(newsGroup.value)">Submit</ion-button>
+            <ion-button type="submit"  color="tertiary" size="small" expand="block" (click)="cancel()">Cancel</ion-button>
+          </form>
+        </ion-list>
+    </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

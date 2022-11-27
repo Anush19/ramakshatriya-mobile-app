@@ -1,8 +1,9 @@
 export interface News {
   id?: string;
-  title: string;
-  subtitle: string;
-  altText: string,
-  info: string,
-  thumbnail: string
+  title?: string;
+  subtitle?: string;
+  altText?: string,
+  info?: string,
+  thumbnail?: string,
+  reference?: any
 }
