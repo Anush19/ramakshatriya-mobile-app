@@ -1,11 +1,11 @@
 <ion-slides [options]="slideOpts">
   <ion-slide  *ngFor="let news of newsList">
     <ion-card href="#">
-      <img  height="20px" src="{{news.thumbnail}}" />
+      <img alt="{{news.image}}" height="20px" src="{{news.image}}" />
       <ion-card-header>
-        <ion-card-title>{{news.title}}</ion-card-title>
-        <ion-card-subtitle>timestamp & author</ion-card-subtitle>
+        <ion-card-title>{{news.headline}}</ion-card-title>
+        <ion-card-subtitle>{{news.subtitle}}</ion-card-subtitle>
       </ion-card-header>
     </ion-card>
   </ion-slide>
- </ion-slides>
+</ion-slides>

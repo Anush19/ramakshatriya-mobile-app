@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NewsInfo } from '../model/news';
 import { NewsService } from '../services/news.service';
 
 @Component({
@@ -17,6 +19,7 @@ export class SlideComponent implements OnInit {
   public newsList: any = [];
 
   constructor(
+    private router: Router,
     private newsService: NewsService
   ) { }
 
@@ -26,11 +29,23 @@ export class SlideComponent implements OnInit {
   }
 
   public getNews() {
-    this.newsService.getNews().subscribe( (newsList) => {
-      console.log(newsList);
-      this.newsList = newsList;
+    const tempNewsList = [];
+    if (this.newsService.imageDetailsList) {
+      this.newsService.imageDetailsList.snapshotChanges().subscribe((newsArticles) => {
+        newsArticles.forEach(item => {
+          const a = item.payload.toJSON();
+          a['$key'] = item.key;
+          tempNewsList.push(a as NewsInfo);
+        });
+        this.newsList = new Set(tempNewsList);
+        console.log(this.newsList);
+      });
     }
-    );
-  }
 
+  }
+  // onImageClick(event: any) {
+  //   console.log(event);
+  //   //this.router.navigate(['/tabs/hometab/home']);
+  // }
+ 
 }
